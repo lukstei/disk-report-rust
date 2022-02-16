@@ -8,7 +8,9 @@ A simple utility for displaying the relative size of the contents of a directory
 
 ## Example
 
-```$ disk-report ~/Downloads/aoc-2021
+```
+$ disk-report ~/Downloads/aoc-2021
+
 Disk report for ~/Downloads/aoc-2021
 
 aoc-2021 - 100%, 773MB total / 0MB own
