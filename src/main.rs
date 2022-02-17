@@ -83,7 +83,10 @@ fn main() -> Result<(), Error> {
     let path = args.pop().unwrap();
 
     let mut file_count = 0;
-    let tree = read_tree(fs::canonicalize(&path).map_err(Error::IO)?, &mut file_count)?;
+    let path = fs::canonicalize(&path).map_err(Error::IO)?;
+
+    println!("Disk report for {}\n", path.to_str().unwrap_or("??"));
+    let tree = read_tree(path, &mut file_count)?;
     println!("{}", format_tree(&tree, 0, tree.total_size));
     Ok(())
 }
