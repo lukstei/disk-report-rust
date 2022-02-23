@@ -16,6 +16,10 @@ OPTIONS:
     -V, --version    Print version information
 ```
 
+## Download
+
+See [Releases](https://github.com/lukstei/disk-report-rust/releases/latest)
+
 ## Example
 
 ```
