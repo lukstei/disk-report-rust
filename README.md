@@ -58,6 +58,6 @@ aoc-2021 - 100%, 773MB total / 0MB own
     release - 22%, 172MB total / 1MB own
       deps - 20%, 158MB total / 158MB own
       build - 2%, 14MB total / 0MB own
-  js - 3%, 27MB total / 0MB own```
+  js - 3%, 27MB total / 0MB own
     node_modules - 3%, 27MB total / 0MB own
 ```
