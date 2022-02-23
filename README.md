@@ -1,10 +1,20 @@
 # disk-report-rust
 
-A simple utility for displaying the relative size of the contents of a directory tree
-
 ## Usage
 
-`disk-report <directory>`
+```
+An application for displaying the relative size of the file contents of a directory tree
+
+USAGE:
+    disk-report [DIRECTORY]
+
+ARGS:
+    <DIRECTORY>    Directory to scan [default: .]
+
+OPTIONS:
+    -h, --help       Print help information
+    -V, --version    Print version information
+```
 
 ## Example
 
@@ -46,3 +56,4 @@ aoc-2021 - 100%, 773MB total / 0MB own
       build - 2%, 14MB total / 0MB own
   js - 3%, 27MB total / 0MB own```
     node_modules - 3%, 27MB total / 0MB own
+```

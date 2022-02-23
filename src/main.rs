@@ -73,17 +73,22 @@ fn format_tree(t: &Tree, depth: i32, total_size: u64) -> String {
     )
 }
 
+use clap::Parser;
+
+/// An application for displaying the relative size of the file contents of a directory tree
+#[derive(Parser, Debug)]
+#[clap(author, version, about, long_about = None)]
+struct Args {
+    /// Directory to scan
+    #[clap(default_value = ".")]
+    directory: String,
+}
+
 fn main() -> Result<(), Error> {
-    let mut args: Vec<String> = std::env::args().collect();
-    if args.is_empty() {
-        let program = args.pop().unwrap();
-        eprintln!("Usage: {} <path>", program);
-        std::process::exit(1);
-    }
-    let path = args.pop().unwrap();
+    let args = Args::parse();
 
     let mut file_count = 0;
-    let path = fs::canonicalize(&path).map_err(Error::IO)?;
+    let path = fs::canonicalize(&args.directory).map_err(Error::IO)?;
 
     println!("Disk report for {}\n", path.to_str().unwrap_or("??"));
     let tree = read_tree(path, &mut file_count)?;
